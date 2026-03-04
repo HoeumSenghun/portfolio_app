@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function page() {
   return (
-    <div>
-      Skills Page
-    </div>
-  )
+    <>
+      <div>Skills Page</div>
+    </>
+  );
 }
