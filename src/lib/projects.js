@@ -1,0 +1,57 @@
+export const projects = [
+  {
+    id: 'second-own-website',
+    title: 'Second Own Website',
+    tech: ['Nuxt', 'TypeScript', 'Web Development'],
+    category: 'web',
+    desc: 'Portfolio website development for showcasing personal projects and achievements.',
+    image: '/projects/second-own-website.png',
+    href: 'https://www.rornsokheng.dev', // replace with your own link if needed
+  },
+  {
+    id: 'ltng-news',
+    title: 'LTNG News',
+    tech: ['Angular', 'Web Development'],
+    category: 'web',
+    desc: 'News website for LTNG with structured categories and recent articles.',
+    image: '/projects/ltng-news.png',
+    href: 'https://example.com/ltng-news',
+  },
+  {
+    id: 'genalpha-mentorship',
+    title: 'GenAlpha Mentorship',
+    tech: ['Next.js', 'TypeScript', 'Web Development'],
+    category: 'web',
+    desc: 'Subscription courses website integrated with Bakong payments and Telegram bot for GenAlpha Mentorship.',
+    image: '/projects/genalpha-mentorship.png',
+    href: 'https://example.com/genalpha-mentorship',
+  },
+  {
+    id: 'angkor-haven-hotel',
+    title: 'Angkor Haven Hotel',
+    tech: ['React', 'TypeScript', 'Web Development'],
+    category: 'web',
+    desc: 'Hotel booking website for Angkor Haven with detailed room information and reservation flow.',
+    image: '/projects/angkor-haven-hotel.png',
+    href: 'https://example.com/angkor-haven-hotel',
+  },
+  {
+    id: 'kiloit-solutions',
+    title: 'KiloIT Solutions',
+    tech: ['Next.js', 'TypeScript', 'Web Development'],
+    category: 'web',
+    desc: 'Portfolio website for KiloIT Solutions highlighting services and case studies.',
+    image: '/projects/kiloit-solutions.png',
+    href: 'https://example.com/kiloit-solutions',
+  },
+  {
+    id: 'kilo-health',
+    title: 'Kilo Health',
+    tech: ['Next.js', 'TypeScript', 'Web Development'],
+    category: 'web',
+    desc: 'Article website development for Kilo Health focused on health and wellness content.',
+    image: '/projects/kilo-health.png',
+    href: 'https://example.com/kilo-health',
+  },
+]
+
