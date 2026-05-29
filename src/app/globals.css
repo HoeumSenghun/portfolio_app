@@ -1,1 +1,120 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist);
+  --font-display: var(--font-geist);
+  --font-khmer: var(--font-noto-khmer);
+  --font-khmer-display: var(--font-battambang);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --theme-duration: 0.2s;
+}
+
+:root {
+  --background: #f8f7f4;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --muted: #efede8;
+  --muted-foreground: #6b6b6b;
+  --border: #e5e2db;
+  --accent: #5c7c6a;
+  --accent-foreground: #f8f7f4;
+  --ring: #5c7c6a;
+  --radius: 0.75rem;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #111110;
+  --foreground: #ededec;
+  --card: #1a1a18;
+  --card-foreground: #ededec;
+  --muted: #252523;
+  --muted-foreground: #a3a3a0;
+  --border: #2e2e2b;
+  --accent: #8fb39a;
+  --accent-foreground: #111110;
+  --ring: #8fb39a;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Smooth theme — only cheap properties, major surfaces (not * { transition }) */
+@media (prefers-reduced-motion: no-preference) {
+  html,
+  body,
+  header,
+  footer,
+  main,
+  article,
+  nav,
+  button,
+  a {
+    transition:
+      background-color var(--theme-duration) ease-out,
+      border-color var(--theme-duration) ease-out,
+      color var(--theme-duration) ease-out;
+  }
+
+  /* Shorter on touch devices — less work per frame on low-end phones */
+  @media (hover: none) and (pointer: coarse) {
+    :root {
+      --theme-duration: 0.15s;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+html[lang="kh"] body {
+  font-family: var(--font-noto-khmer), system-ui, sans-serif;
+}
+
+html[lang="kh"] h1,
+html[lang="kh"] h2,
+html[lang="kh"] h3 {
+  font-family: var(--font-battambang), var(--font-noto-khmer), sans-serif;
+}
+
+html[lang="en"] body {
+  font-family: var(--font-geist), system-ui, sans-serif;
+}
+
+::selection {
+  background-color: color-mix(in oklab, var(--accent) 35%, transparent);
+}

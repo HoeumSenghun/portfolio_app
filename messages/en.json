@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "senghunhoeum",
+    "description": "Portfolio of Senghun Hoeum Full Stack web developer focused on clean UI, performance, and modern experiences."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Senghun Hoeum",
+    "role": "Full Stack Developer",
+    "tagline": "I build fast, accessible, and polished web experiences.",
+    "cta": "View my work",
+    "contact": "Get in touch"
+  },
+  "bento": {
+    "about": {
+      "title": "About",
+      "body": "Developer passionate about clean interfaces, performance, and thoughtful UX."
+    },
+    "projects": {
+      "title": "Projects",
+      "body": "Selected work with modern stacks — Next.js, React, and more."
+    },
+    "skills": {
+      "title": "Skills",
+      "body": "Frontend, UI systems, and full-stack tooling."
+    },
+    "experience": {
+      "title": "Experience",
+      "body": "Real-world projects and continuous learning."
+    },
+    "contact": {
+      "title": "Contact",
+      "body": "Open to collaborations and new opportunities."
+    },
+    "achievement": {
+      "title": "Achievements",
+      "body": "Milestones and certifications along the journey."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "built": "Built with Next.js & Tailwind"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "toggle": "Toggle theme"
+  },
+  "locale": {
+    "en": "English",
+    "kh": "ខ្មែរ"
+  }
+}
