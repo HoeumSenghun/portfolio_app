@@ -1,6 +1,11 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { projects } from '@/data/mock'
+import { createPageMetadata } from '@/lib/page-metadata'
+
+export async function generateMetadata ({ params }) {
+  return createPageMetadata({ params, namespace: 'pages.projects', path: '/projects' })
+}
 
 export default async function ProjectsPage ({ params }) {
   const { locale } = await params

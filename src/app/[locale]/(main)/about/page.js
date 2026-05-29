@@ -1,5 +1,10 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { profile } from '@/data/mock'
+import { createPageMetadata } from '@/lib/page-metadata'
+
+export async function generateMetadata ({ params }) {
+  return createPageMetadata({ params, namespace: 'pages.about', path: '/about' })
+}
 
 export default async function AboutPage ({ params }) {
   const { locale } = await params
