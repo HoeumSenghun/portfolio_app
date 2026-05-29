@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { Button } from '@/components/ui/button'
 import { profile } from '@/data/mock'
 
@@ -52,10 +53,10 @@ export default function Hero () {
           </motion.p>
           <motion.div custom={4} variants={fadeUp} className="flex flex-wrap gap-3">
             <Button asChild>
-              <a href="#projects">{t('cta')}</a>
+              <Link href="/projects">{t('cta')}</Link>
             </Button>
             <Button variant="outline" asChild>
-              <a href="#contact">{t('contact')}</a>
+              <Link href="/contact">{t('contact')}</Link>
             </Button>
           </motion.div>
         </motion.div>

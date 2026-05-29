@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { HiArrowRight } from 'react-icons/hi'
+import { Link } from '@/i18n/navigation'
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { bentoSections, skills, projects } from '@/data/mock'
 import { cn } from '@/lib/utils'
@@ -42,11 +43,10 @@ export default function BentoGrid () {
         {bentoSections.map(({ key, href, span }) => (
           <motion.div
             key={key}
-            id={key === 'about' ? 'about' : key}
             variants={item}
             className={cn(span, key === 'about' && 'min-h-[280px]')}
           >
-            <a href={href} className="group block h-full">
+            <Link href={href} className="group block h-full">
               <Card className="flex h-full flex-col justify-between p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-md">
                 <CardHeader className="p-0">
                   <CardTitle className="flex items-center justify-between gap-2">
@@ -60,7 +60,7 @@ export default function BentoGrid () {
 
                 {key === 'skills' && (
                   <ul className="mt-4 flex flex-wrap gap-2" aria-label="Skills">
-                    {skills.slice(0, 4).map(({ name, icon: Icon }) => (
+                    {skills.slice(0, 6).map(({ name, icon: Icon }) => (
                       <li
                         key={name}
                         className="flex items-center gap-1.5 rounded-md bg-muted px-2.5 py-1 text-xs"
@@ -84,7 +84,7 @@ export default function BentoGrid () {
                   </ul>
                 )}
               </Card>
-            </a>
+            </Link>
           </motion.div>
         ))}
       </motion.div>

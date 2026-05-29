@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "senghunhoeum",
-    "description": "ផតហ្វូលីអូរបស់ ហ៊ឹម សេងហ៊ុន — អ្នកអភិវឌ្ឍវេប ផ្តោតលើ UI ស្អាត ល្បឿន និងបទពិសោធន៍ទំនើប។"
+    "title": "ហឿម សេងហ៊ុន",
+    "description": "ផតហ្វូលីអូរបស់ ហឿម សេងហ៊ុន - អ្នកអភិវឌ្ឍ Full Stack ជំនាញ Java Spring Boot, Next.js, React, TypeScript និង PostgreSQL។"
   },
   "nav": {
     "home": "ទំព័រដើម",
@@ -9,45 +9,45 @@
     "projects": "គម្រោង",
     "skills": "ជំនាញ",
     "experience": "បទពិសោធន៍",
-    "contact": "ទាក់ទង"
+    "contact": "ទំនាក់ទំនង"
   },
   "hero": {
     "greeting": "សួស្តី ខ្ញុំឈ្មោះ",
-    "name": "ហ៊ឹម សេងហ៊ុន",
-    "role": "អ្នកអភិវឌ្ឍវេប",
-    "tagline": "ខ្ញុំបង្កើតវេបសាយលឿន ងាយចូលដំណើរការ និងស្អាត។",
+    "name": "ហឿម សេងហ៊ុន",
+    "role": "អ្នកអភិវឌ្ឍ Full Stack",
+    "tagline": "ខ្ញុំបង្កើតវេបពីចាប់ផ្តើមដល់ចប់ - ពី Spring Boot API ដល់ React & Next.js។",
     "cta": "មើលការងារ",
     "contact": "ទាក់ទងខ្ញុំ"
   },
   "bento": {
     "about": {
       "title": "អំពីខ្ញុំ",
-      "body": "អ្នកអភិវឌ្ឍដែលចូលចិត្ត UI ស្អាត ល្បឿន និង UX ដែលគិតដល់អ្នកប្រើប្រាស់។"
+      "body": "អ្នកអភិវឌ្ឍ Full Stack ផ្តោតលើ Java Spring Boot និង React/Next.js។"
     },
     "projects": {
       "title": "គម្រោង",
-      "body": "ការងារជ្រើសរើស ប្រើបច្ចេកវិទ្យាទំនើប — Next.js, React និងផ្សេងៗទៀត។"
+      "body": "API, dashboard និង full stack app ដោយ Spring Boot, Next.js, React និង PostgreSQL។"
     },
     "skills": {
       "title": "ជំនាញ",
-      "body": "Frontend, UI systems និងឧបករណ៍ full-stack។"
+      "body": "Spring Boot, Next.js, React, JavaScript, TypeScript, Tailwind, PostgreSQL, Oracle, Git, Jenkins។"
     },
     "experience": {
       "title": "បទពិសោធន៍",
-      "body": "គម្រោងជាក់ស្តែង និងការរៀនជាបន្តបន្ទាប់។"
+      "body": "បទពិសោធន៍ full stack - backend, frontend UI និង database design។"
     },
     "contact": {
       "title": "ទាក់ទង",
-      "body": "បើកចំហរចំពោះការរួមគ្នា និងឱកាសថ្មី។"
+      "body": "បើកចំហរចំពោះ full stack role, freelance និងការរួមគ្នា។"
     },
     "achievement": {
       "title": "សមិទ្ធផល",
-      "body": "ដំណើរការ និងវិញ្ញាបនបត្រក្នុងដំណើររបស់ខ្ញុំ។"
+      "body": "គម្រោងដែល deploy ដោយ Spring Boot, CI pipeline និង React UI។"
     }
   },
   "footer": {
     "rights": "រក្សាសិទ្ធិគ្រប់យ៉ាង។",
-    "built": "បង្កើតដោយ Next.js & Tailwind"
+    "built": "បង្កើតដោយ Next.js & vercel"
   },
   "theme": {
     "light": "ពន្លឺ",
@@ -56,6 +56,35 @@
   },
   "locale": {
     "en": "English",
-    "kh": "ខ្មែរ"
+    "kh": "ខ្មែរ",
+    "switch": "ប្តូរភាសាទៅ"
+  },
+  "pages": {
+    "about": {
+      "title": "អំពីខ្ញុំ",
+      "description": "អ្នកអភិវឌ្ឍ Full Stack ផ្តោតលើ backend ដែល scale បាន និង frontend ស្អាត។",
+      "body": "ខ្ញុំឈ្មោះ ហឿម សេងហ៊ុន ជាអ្នកអភិវឌ្ឍ Full Stack នៅកម្ពុជា។ ខ្ញុំបង្កើត REST API ដោយ Java Spring Boot, UI ដោយ Next.js និង React, និងគ្រប់គ្រងទិន្នន័យដោយ PostgreSQL និង Oracle។ ខ្ញុំប្រើ Git, Jenkins និង Postman សម្រាប់ workflow របស់ខ្ញុំ។"
+    },
+    "projects": {
+      "title": "គម្រោង",
+      "description": "ការងារ full stack ពី Spring Boot backend, React/Next.js frontend និង relational database។"
+    },
+    "skills": {
+      "title": "ជំនាញ",
+      "description": "បច្ចេកវិទ្យាដែលខ្ញុំប្រើប្រាស់សម្រាប់អេប full stack application។"
+    },
+    "experiences": {
+      "title": "បទពិសោធន៍",
+      "description": "បទពិសោធន៍ full stack ក្នុង backend, frontend និង DevOps tools។"
+    },
+    "achievement": {
+      "title": "សមិទ្ធផល",
+      "description": "ដំណើរការក្នុង ការអភិវឌ្ឍន៍ទាំង Frontend និង Backend និងការរៀនបន្ត។"
+    },
+    "contact": {
+      "title": "ទាក់ទង",
+      "description": "ទាក់ទងមកពិភាក្សាអំពីគម្រោង Full Stack Projects, ឱកាសការងារ និង កិច្ចសហការក្រុម",
+      "email": "ផ្ញើអ៊ីមែល"
+    }
   }
 }

@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import ThemeScript from '@/components/ThemeScript'
 import Header from '@/components/layout/Header'
+import FloatingNav from '@/components/layout/FloatingNav'
 import Footer from '@/components/layout/Footer'
 import '../globals.css'
 
@@ -40,6 +41,10 @@ export async function generateMetadata ({ params }) {
   return {
     title: t('title'),
     description: t('description'),
+    icons: {
+      icon: [{ url: '/icon-global.svg', type: 'image/svg+xml' }],
+      shortcut: '/icon-global.svg',
+    },
     openGraph: {
       title: t('title'),
       description: t('description'),
@@ -73,7 +78,8 @@ export default async function LocaleLayout ({ children, params }) {
           <NextIntlClientProvider messages={messages}>
             <div className="flex min-h-screen flex-col">
               <Header />
-              <main id="main-content" className="flex-1">
+              <FloatingNav />
+              <main id="main-content" className="flex-1 pt-20 md:pt-0">
                 {children}
               </main>
               <Footer />

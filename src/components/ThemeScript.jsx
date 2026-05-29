@@ -1,4 +1,4 @@
-/** Runs before paint — avoids light/dark flash on load (next-themes pattern). */
+
 const themeInitScript = `
 (function () {
   try {
