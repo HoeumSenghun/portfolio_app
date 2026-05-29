@@ -2,7 +2,7 @@ import { siteName, siteUrl } from '@/lib/site'
 
 const keywords = {
   en: [
-    'Senghun Hoeum',
+    'Hoeum Senghun',
     'Full Stack Developer',
     'Java Spring Boot',
     'Next.js',
