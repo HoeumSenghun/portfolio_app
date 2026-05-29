@@ -1,5 +1,10 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { skills } from '@/data/mock'
+import { createPageMetadata } from '@/lib/page-metadata'
+
+export async function generateMetadata ({ params }) {
+  return createPageMetadata({ params, namespace: 'pages.skills', path: '/skills' })
+}
 
 export default async function SkillsPage ({ params }) {
   const { locale } = await params

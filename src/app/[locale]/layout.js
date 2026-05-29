@@ -8,7 +8,10 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import ThemeScript from '@/components/ThemeScript'
 import Header from '@/components/layout/Header'
 import FloatingNav from '@/components/layout/FloatingNav'
+import { Analytics } from '@vercel/analytics/next'
 import Footer from '@/components/layout/Footer'
+import JsonLd from '@/components/JsonLd'
+import { buildMetadata } from '@/lib/seo'
 import '../globals.css'
 
 const geist = Geist({
@@ -38,20 +41,11 @@ export async function generateMetadata ({ params }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'meta' })
 
-  return {
+  return buildMetadata({
+    locale,
     title: t('title'),
     description: t('description'),
-    icons: {
-      icon: [{ url: '/icon-global.svg', type: 'image/svg+xml' }],
-      shortcut: '/icon-global.svg',
-    },
-    openGraph: {
-      title: t('title'),
-      description: t('description'),
-      locale: locale === 'kh' ? 'km_KH' : 'en_US',
-      type: 'website',
-    },
-  }
+  })
 }
 
 export default async function LocaleLayout ({ children, params }) {
@@ -63,6 +57,7 @@ export default async function LocaleLayout ({ children, params }) {
 
   setRequestLocale(locale)
   const messages = await getMessages()
+  const t = await getTranslations({ locale, namespace: 'meta' })
 
   return (
     <html
@@ -72,6 +67,11 @@ export default async function LocaleLayout ({ children, params }) {
     >
       <head>
         <ThemeScript />
+        <JsonLd
+          locale={locale}
+          title={t('title')}
+          description={t('description')}
+        />
       </head>
       <body className="min-h-screen antialiased">
         <ThemeProvider>
@@ -86,6 +86,7 @@ export default async function LocaleLayout ({ children, params }) {
             </div>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )

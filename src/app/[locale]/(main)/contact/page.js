@@ -1,6 +1,11 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { Button } from '@/components/ui/button'
 import { profile, socialLinks } from '@/data/mock'
+import { createPageMetadata } from '@/lib/page-metadata'
+
+export async function generateMetadata ({ params }) {
+  return createPageMetadata({ params, namespace: 'pages.contact', path: '/contact' })
+}
 
 export default async function ContactPage ({ params }) {
   const { locale } = await params

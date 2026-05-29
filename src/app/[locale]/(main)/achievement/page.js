@@ -1,5 +1,10 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { achievements } from '@/data/mock'
+import { createPageMetadata } from '@/lib/page-metadata'
+
+export async function generateMetadata ({ params }) {
+  return createPageMetadata({ params, namespace: 'pages.achievement', path: '/achievement' })
+}
 
 export default async function AchievementPage ({ params }) {
   const { locale } = await params
