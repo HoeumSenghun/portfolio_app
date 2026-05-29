@@ -28,6 +28,8 @@ export function buildMetadata ({ locale, title, description, path = '' }) {
   const canonicalPath = `/${locale}${path}`
   const canonical = `${siteUrl}${canonicalPath}`
   const ogImage = `${siteUrl}/icon-global.svg`
+  const googleVerification =
+    process.env.GOOGLE_SITE_VERIFICATION ?? null
 
   return {
     metadataBase: new URL(siteUrl),
@@ -36,6 +38,13 @@ export function buildMetadata ({ locale, title, description, path = '' }) {
     keywords: keywords[locale] ?? keywords.en,
     authors: [{ name: 'Senghun Hoeum', url: siteUrl }],
     creator: 'Senghun Hoeum',
+    ...(googleVerification
+      ? {
+          verification: {
+            google: googleVerification,
+          },
+        }
+      : {}),
     robots: {
       index: true,
       follow: true,
