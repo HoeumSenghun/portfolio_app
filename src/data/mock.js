@@ -14,12 +14,12 @@ import { HiOutlineMail, HiOutlineLocationMarker, HiOutlineDatabase } from 'react
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export const profile = {
-  name: 'Senghun Hoeum',
+  name: 'Hoeum Senghun',
   role: 'Full Stack Developer',
   location: 'Cambodia',
   email: 'hoeumsenghun369@gmail.com',
   github: 'https://github.com/HoeumSenghun',
-  linkedin: 'https://www.linkedin.com',
+  linkedin: 'https://www.linkedin.com/in/hoeumsenghun/',
   avatar: '/avatar-placeholder.svg',
 }
 

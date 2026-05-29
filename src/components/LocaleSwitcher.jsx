@@ -16,7 +16,7 @@ function useIsClient () {
 }
 
 const localeFlags = {
-  en: 'US',
+  en: 'GB',
   kh: 'KH',
 }
 
@@ -33,7 +33,7 @@ export default function LocaleSwitcher () {
   const isClient = useIsClient()
 
   const nextLocale = getNextLocale(locale)
-  const flagCode = localeFlags[nextLocale]
+  const flagCode = localeFlags[locale]
 
   function toggleLocale () {
     router.replace(pathname, { locale: nextLocale })
@@ -51,7 +51,8 @@ export default function LocaleSwitcher () {
     <Button
       variant="ghost"
       size="icon"
-      aria-label={`${t('switch')} ${t(nextLocale)}`}
+      title={`${t(locale)} - ${t('switch')} ${t(nextLocale)}`}
+      aria-label={`${t(locale)}. ${t('switch')} ${t(nextLocale)}`}
       onClick={toggleLocale}
     >
       <ReactCountryFlag

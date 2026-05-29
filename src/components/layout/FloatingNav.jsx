@@ -28,7 +28,10 @@ const icons = {
   contact: Mail,
 }
 
-const localeFlags = { en: 'US', kh: 'KH' }
+const localeFlags = { en: 'GB', kh: 'KH' }
+
+const iconBtn =
+  'flex h-10 w-9.5 shrink-0 items-center justify-center rounded-lg touch-manipulation'
 
 function useIsClient () {
   return useSyncExternalStore(
@@ -51,19 +54,6 @@ function getNextLocale (current) {
 function applyColorScheme (theme) {
   document.documentElement.style.colorScheme =
     theme === 'dark' ? 'dark' : 'light'
-}
-
-function NavIconButton ({ className, ...props }) {
-  return (
-    <button
-      type="button"
-      className={cn(
-        'flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-muted hover:text-foreground',
-        className
-      )}
-      {...props}
-    />
-  )
 }
 
 export default function FloatingNav () {
@@ -93,67 +83,78 @@ export default function FloatingNav () {
     <nav
       aria-label="Mobile"
       className={cn(
-        'fixed z-40 flex -translate-x-1/2 left-1/2 items-center md:hidden',
-        'top-[max(1.25rem,env(safe-area-inset-top))] rounded-[20px] px-4 py-2.5 gap-1.5',
-        'bg-card/95 backdrop-blur-sm border border-border/50',
-        'shadow-[0_4px_24px_rgba(0,0,0,0.1)]'
+        'fixed z-40 left-1/2 -translate-x-1/2 md:hidden',
+        'top-[max(0.5rem,env(safe-area-inset-top))]',
+        'max-w-[calc(100vw-0.75rem)]',
+        'rounded-2xl border border-border/50 bg-card/95 px-1 py-1',
+        'shadow-[0_2px_16px_rgba(0,0,0,0.08)] backdrop-blur-sm'
       )}
     >
-      {navLinks.map(({ href, label }) => {
-        const Icon = icons[label]
-        const active = isActive(pathname, href)
+      <div
+        className="flex items-center gap-0.5 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {navLinks.map(({ href, label }) => {
+          const Icon = icons[label]
+          const active = isActive(pathname, href)
 
-        return (
-          <Link
-            key={href}
-            href={href}
-            title={tNav(label)}
-            aria-label={tNav(label)}
-            aria-current={active ? 'page' : undefined}
-            className={cn(
-              'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors',
-              active
-                ? 'bg-accent/15 text-accent'
-                : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-            )}
-          >
-            <Icon className="h-[22px] w-[22px]" strokeWidth={2} aria-hidden />
-          </Link>
-        )
-      })}
+          return (
+            <Link
+              key={href}
+              href={href}
+              title={tNav(label)}
+              aria-label={tNav(label)}
+              aria-current={active ? 'page' : undefined}
+              className={cn(
+                iconBtn,
+                'transition-colors',
+                active
+                  ? 'bg-accent/15 text-accent'
+                  : 'text-muted-foreground active:bg-muted active:text-foreground'
+              )}
+            >
+              <Icon className="h-5 w-5" strokeWidth={2} aria-hidden />
+            </Link>
+          )
+        })}
 
-      <span className="mx-0.5 hidden h-6 w-px bg-border sm:block" aria-hidden />
+        <span className="mx-0.5 h-4 w-px shrink-0 bg-border" aria-hidden />
 
-      {isClient ? (
-        <>
-          <NavIconButton
-            aria-label={`${tLocale('switch')} ${tLocale(nextLocale)}`}
-            onClick={toggleLocale}
-          >
-            <ReactCountryFlag
-              countryCode={localeFlags[nextLocale]}
-              svg
-              style={{ width: '1.125rem', height: '1.125rem', borderRadius: '2px' }}
-              aria-hidden
-            />
-          </NavIconButton>
-          <NavIconButton
-            aria-label={tTheme('toggle')}
-            onClick={toggleTheme}
-          >
-            {isDark ? (
-              <Sun className="h-[22px] w-[22px]" strokeWidth={2} aria-hidden />
-            ) : (
-              <Moon className="h-[22px] w-[22px]" strokeWidth={2} aria-hidden />
-            )}
-          </NavIconButton>
-        </>
-      ) : (
-        <>
-          <span className="h-10 w-10" aria-hidden />
-          <span className="h-10 w-10" aria-hidden />
-        </>
-      )}
+        {isClient ? (
+          <>
+            <button
+              type="button"
+              title={`${tLocale(locale)} — ${tLocale('switch')} ${tLocale(nextLocale)}`}
+              aria-label={`${tLocale(locale)}. ${tLocale('switch')} ${tLocale(nextLocale)}`}
+              onClick={toggleLocale}
+              className={cn(iconBtn, 'text-muted-foreground active:bg-muted')}
+            >
+              <ReactCountryFlag
+                countryCode={localeFlags[locale]}
+                svg
+                style={{ width: '0.995rem', height: '0.995rem', borderRadius: '1px' }}
+                aria-hidden
+              />
+            </button>
+            <button
+              type="button"
+              aria-label={tTheme('toggle')}
+              onClick={toggleTheme}
+              className={cn(iconBtn, 'text-muted-foreground active:bg-muted')}
+            >
+              {isDark ? (
+                <Sun className="h-5 w-5" strokeWidth={2} aria-hidden />
+              ) : (
+                <Moon className="h-5 w-5" strokeWidth={2} aria-hidden />
+              )}
+            </button>
+          </>
+        ) : (
+          <>
+            <span className="h-8 w-8 shrink-0" aria-hidden />
+            <span className="h-8 w-8 shrink-0" aria-hidden />
+          </>
+        )}
+      </div>
     </nav>
   )
 }
