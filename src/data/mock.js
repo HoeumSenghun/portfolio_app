@@ -40,37 +40,52 @@ export const skills = [
 export const projects = [
   {
     id: '1',
-    title: 'REST API Platform',
-    description: 'Secure REST APIs with Java Spring Boot, JWT auth, and PostgreSQL.',
-    tags: ['Spring Boot', 'PostgreSQL', 'Postman'],
-    href: '#',
+    title: 'Kilohealth Website',
+    description: 'Website blog that talk about health. This Project is a team project that contributed KiloIT members.',
+    tags: ['Html', 'css', 'JavaScript', 'React.js', 'gitLab'],
+    href: 'https://www.kilohealth.com',
   },
   {
     id: '2',
     title: 'Portfolio Website',
-    description: 'Bilingual portfolio built with Next.js, React, TypeScript, and Tailwind CSS.',
-    tags: ['Next.js', 'React', 'Tailwind CSS'],
-    href: '#',
+    description: 'This is my first portfolio built with Next.js, React, TypeScript, and Tailwind CSS.',
+    tags: ['Html', 'css', 'Tailwindcss', 'JavaScript', 'Next.js', 'React', 'Tailwind CSS'],
+    href: 'https://senghunhoeum.vercel.app/',
   },
   {
     id: '3',
-    title: 'Enterprise Web App',
-    description: 'Full stack application with React frontend and Oracle database integration.',
-    tags: ['React.js', 'Spring Boot', 'Oracle'],
-    href: '#',
+    title: 'Zentrio Full Stack Website',
+    description: 'Full stack website with Nextjs frontend and Java Spring Boot Backend. This Website is a task management system that allows users to create, manage, and track tasks efficiently.',
+    tags: ['Html', 'css', 'Tailwindcss', 'JavaScript' , 'Next.js', 'Java', 'Spring Boot', 'PostgreSQL', 'GitHub'],
+    href: 'https://kshrd.zentrio.pro/',
   },
 ]
 
 export const experiences = [
   {
     id: '1',
-    role: 'Full Stack Developer',
-    company: 'Learning & Practice',
-    period: '2025 - 2026',
-    highlights: ['JavaScript & TypeScript', 'Git workflows', 'java Spring Boot', 'PostgreSQL', 'Git'],
+    role: 'Java Developer',
+    company: 'eMoney Solution PLC',
+    period: '2025 - Present',
+    highlights: [
+      'Developed and maintained backend services for digital payment and wallet systems',
+      'Designed and implemented RESTful APIs for internal and external integrations',
+      'Collaborated with cross-functional teams to deliver scalable financial solutions',
+      'Optimized database queries and application performance for high-volume transactions',
+      'Participated in system design, code reviews, testing, and deployment processes',
+      'Maintained secure and reliable payment processing workflows',
+      'Contributed to production issue investigation and system monitoring'
+    ]
   },
   {
     id: '2',
+    role: 'Software Engineer (Student)',
+    company: 'Korea Software HRD Center (KSHRD)',
+    period: '2025 - 2026',
+    highlights: ['HtML', 'Css', 'Tailwind CSS', 'JavaScript', 'JavaScript & TypeScript', 'Git workflows', 'java Spring Boot', 'PostgreSQL', 'UX/UI design'],
+  },
+  {
+    id: '3',
     role: 'Frontend Developer (Trainee)',
     company: 'KiloIT',
     period: '2024 - 2025',

@@ -13,7 +13,7 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "name": "Senghun Hoeum",
+    "name": "Hoeum Senghun",
     "role": "Full Stack Developer",
     "tagline": "I build end-to-end web apps - from Spring Boot APIs to React & Next.js frontends.",
     "cta": "View my work",
