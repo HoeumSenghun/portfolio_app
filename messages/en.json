@@ -14,14 +14,14 @@
   "hero": {
     "greeting": "Hello, I'm",
     "name": "Hoeum Senghun",
-    "role": "Full Stack Developer",
-    "tagline": "I build end-to-end web apps - from Spring Boot APIs to React & Next.js frontends.",
+    "role": "Software Engineer specialized",
+    "tagline": "Specializing in enterprise Java backends and modern frontend frameworks ecosystem.",
     "cta": "View my work",
     "contact": "Get in touch"
   },
   "bento": {
     "about": {
-      "title": "About",
+      "title": "About Me",
       "body": "Full stack developer focused on Java Spring Boot backends and modern React/Next.js interfaces."
     },
     "projects": {
@@ -61,9 +61,9 @@
   },
   "pages": {
     "about": {
-      "title": "About",
-      "description": "Full stack developer with a focus on scalable backends and clean frontends.",
-      "body": "I'm Senghun Hoeum, a Full Stack Developer based in Cambodia. I work across the stack - building REST APIs with Java Spring Boot, crafting UIs with Next.js and React, and managing data with PostgreSQL and Oracle. I use Git for version control, Jenkins for CI, and Postman for API testing."
+      "title": "About Me",
+      "description": "Software Engineer specialized in backend engineering, API integration, and frontend development.",
+      "body": "I'm Hoeum Senghun, a Full Stack Software Engineer with expertise in designing robust backend architectures and high performance user interfaces. Specializing in the Java Spring Boot, modern frontend frameworks, and relational database management, focuses on secure, optimized, and maintainable software solutions."
     },
     "projects": {
       "title": "Projects",
@@ -74,7 +74,7 @@
       "description": "Technologies I use to build and ship full stack applications."
     },
     "experiences": {
-      "title": "Experience",
+      "title": "Experiences",
       "description": "Full stack development experience across backend, frontend, and DevOps tooling."
     },
     "achievement": {
