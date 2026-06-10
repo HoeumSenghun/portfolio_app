@@ -15,9 +15,12 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export const profile = {
   name: 'Hoeum Senghun',
-  role: 'Full Stack Developer',
-  location: 'Cambodia',
+  role: 'Software Engineer',
+  location: 'Phnom Penh, Cambodia',
   email: 'hoeumsenghun369@gmail.com',
+  phone: '+855 97 868 4464',
+  experience: '2+ years of experiences',
+  projects: '9+ projects completed',
   github: 'https://github.com/HoeumSenghun',
   linkedin: 'https://www.linkedin.com/in/hoeumsenghun/',
   avatar: '/avatar-placeholder.svg',
@@ -61,21 +64,14 @@ export const projects = [
   },
 ]
 
+// Higher id appears first on the experiences timeline
 export const experiences = [
   {
     id: '1',
-    role: 'Java Developer',
-    company: 'eMoney Solution PLC',
-    period: '2025 - Present',
-    highlights: [
-      'Developed and maintained backend services for digital payment and wallet systems',
-      'Designed and implemented RESTful APIs for internal and external integrations',
-      'Collaborated with cross-functional teams to deliver scalable financial solutions',
-      'Optimized database queries and application performance for high-volume transactions',
-      'Participated in system design, code reviews, testing, and deployment processes',
-      'Maintained secure and reliable payment processing workflows',
-      'Contributed to production issue investigation and system monitoring'
-    ]
+    role: 'Frontend Developer (Trainee)',
+    company: 'KiloIT',
+    period: '2024 - 2025',
+    highlights: ['HtML', 'Css', 'JavaScript', 'React.js', 'Git workflows'],
   },
   {
     id: '2',
@@ -86,10 +82,16 @@ export const experiences = [
   },
   {
     id: '3',
-    role: 'Frontend Developer (Trainee)',
-    company: 'KiloIT',
-    period: '2024 - 2025',
-    highlights: ['HtML', 'Css', 'JavaScript', 'React.js', 'Git workflows'],
+    role: 'Java Developer',
+    company: 'eMoney Solution PLC',
+    period: '2025 - Present',
+    highlights: [
+      'Developed and maintained backend services for payment processing',
+      'Implemented RESTful APIs for internal and external integrations',
+      'Optimized database queries performance for transactions',
+      'Maintained secure payment processing workflows',
+      'Participated in code reviews, testing, and deployment processes'
+    ]
   },
 ]
 
