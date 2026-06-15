@@ -1,0 +1,218 @@
+.skills-carousel {
+  --carousel-width: 200px;
+  --carousel-height: 250px;
+  --carousel-depth: 400px;
+  --carousel-tilt: -16deg;
+  --carousel-duration: 22s;
+  --carousel-scale: 1;
+  --stage-padding-x: 1.5rem;
+  --stage-padding-top: 2.5rem;
+  --stage-padding-bottom: 9rem;
+  width: 100%;
+  padding-inline: var(--stage-padding-x);
+}
+
+.skills-carousel__stage {
+  position: relative;
+  width: 100%;
+  min-height: calc(
+    var(--carousel-height) + var(--carousel-depth) * 0.72 + var(--stage-padding-bottom)
+  );
+  padding-top: var(--stage-padding-top);
+  padding-bottom: var(--stage-padding-bottom);
+  overflow: visible;
+  text-align: center;
+}
+
+.skills-carousel__fit {
+  position: relative;
+  width: 100%;
+  height: calc(var(--carousel-height) + var(--carousel-depth) * 0.45);
+  transform: scale(var(--carousel-scale));
+  transform-origin: center top;
+}
+
+.skills-carousel__slider {
+  position: absolute;
+  width: var(--carousel-width);
+  height: var(--carousel-height);
+  top: 0;
+  left: calc(50% - var(--carousel-width) / 2);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: skills-carousel-spin var(--carousel-duration) linear infinite;
+  z-index: 2;
+}
+
+.skills-carousel__slider:hover {
+  animation-play-state: paused;
+}
+
+@keyframes skills-carousel-spin {
+  from {
+    transform: perspective(1000px) rotateX(var(--carousel-tilt)) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(var(--carousel-tilt)) rotateY(360deg);
+  }
+}
+
+.skills-carousel__item {
+  position: absolute;
+  inset: 0;
+  transform:
+    rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(var(--carousel-depth));
+}
+
+.skills-carousel__card {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  box-shadow:
+    0 12px 32px color-mix(in oklab, var(--foreground) 8%, transparent),
+    inset 0 1px 0 color-mix(in oklab, var(--foreground) 6%, transparent);
+  backdrop-filter: blur(8px);
+  padding: 1.25rem 1rem;
+}
+
+.skills-carousel__icon {
+  display: flex;
+  height: 3.5rem;
+  width: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 2px solid color-mix(in oklab, var(--accent) 35%, transparent);
+  background: color-mix(in oklab, var(--muted) 60%, transparent);
+  color: var(--accent);
+}
+
+.skills-carousel__name {
+  max-width: 100%;
+  padding: 0 0.25rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--foreground);
+}
+
+.skills-carousel__floor {
+  pointer-events: none;
+  position: absolute;
+  bottom: var(--stage-padding-bottom);
+  left: 50%;
+  z-index: 1;
+  width: min(900px, calc(100% - 2rem));
+  height: 45%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center top,
+    color-mix(in oklab, var(--accent) 18%, transparent) 0%,
+    transparent 68%
+  );
+}
+
+.skills-carousel__title {
+  pointer-events: none;
+  position: absolute;
+  bottom: calc(var(--stage-padding-bottom) - 1rem);
+  left: 50%;
+  z-index: 1;
+  width: calc(100% - 2rem);
+  max-width: 72rem;
+  transform: translateX(-50%);
+  font-size: clamp(2.5rem, 12vw, 7rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: color-mix(in oklab, var(--foreground) 12%, transparent);
+  user-select: none;
+}
+
+.skills-carousel__title::after {
+  position: absolute;
+  inset: 0;
+  content: attr(data-content);
+  -webkit-text-stroke: 1px color-mix(in oklab, var(--foreground) 22%, transparent);
+  color: transparent;
+}
+
+/* Desktop: fit ring inside container, keep card spacing */
+@media screen and (min-width: 1024px) {
+  .skills-carousel {
+    --carousel-depth: 380px;
+    --carousel-scale: min(
+      1,
+      calc((100% - 2rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
+    );
+    --stage-padding-top: 3rem;
+    --stage-padding-bottom: 10rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .skills-carousel {
+    --carousel-width: 160px;
+    --carousel-height: 200px;
+    --carousel-depth: 280px;
+    --stage-padding-x: 1.25rem;
+    --stage-padding-top: 2rem;
+    --stage-padding-bottom: 8rem;
+    --carousel-scale: min(
+      1,
+      calc((100vw - 2.5rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
+    );
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .skills-carousel {
+    --carousel-width: 118px;
+    --carousel-height: 158px;
+    /* 11 cards: need depth ~ cardWidth * count / (2π) ≈ 206px minimum */
+    --carousel-depth: 240px;
+    --stage-padding-x: 1rem;
+    --stage-padding-top: 1.5rem;
+    --stage-padding-bottom: 7rem;
+    --carousel-scale: min(
+      1,
+      calc((100vw - 2rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
+    );
+  }
+
+  .skills-carousel__icon {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+
+  .skills-carousel__icon svg {
+    height: 1.375rem;
+    width: 1.375rem;
+  }
+
+  .skills-carousel__card {
+    gap: 0.625rem;
+    padding: 1rem 0.625rem;
+  }
+
+  .skills-carousel__name {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-carousel__slider {
+    animation: none;
+    transform: perspective(1000px) rotateX(var(--carousel-tilt)) rotateY(-24deg);
+  }
+}

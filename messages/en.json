@@ -71,7 +71,8 @@
     },
     "skills": {
       "title": "Skills",
-      "description": "Technologies I use to build and ship full stack applications."
+      "description": "Technologies I use to build and ship full stack applications.",
+      "watermark": "SKILLS"
     },
     "experiences": {
       "title": "Experiences",
