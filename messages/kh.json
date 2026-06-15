@@ -72,7 +72,8 @@
     "skills": {
       "title": "ជំនាញ",
       "description": "បច្ចេកវិទ្យាដែលខ្ញុំប្រើប្រាស់សម្រាប់អេប full stack application។",
-      "watermark": "ជំនាញ"
+      "watermark": "ជំនាញ",
+      "marqueeLabel": "បច្ចេកវិទ្យា marquee"
     },
     "experiences": {
       "title": "បទពិសោធន៍",

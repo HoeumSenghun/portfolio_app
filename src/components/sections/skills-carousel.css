@@ -7,7 +7,7 @@
   --carousel-scale: 1;
   --stage-padding-x: 1.5rem;
   --stage-padding-top: 2.5rem;
-  --stage-padding-bottom: 9rem;
+  --stage-padding-bottom: 5.5rem;
   width: 100%;
   padding-inline: var(--stage-padding-x);
 }
@@ -146,7 +146,6 @@
   color: transparent;
 }
 
-/* Desktop: fit ring inside container, keep card spacing */
 @media screen and (min-width: 1024px) {
   .skills-carousel {
     --carousel-depth: 380px;
@@ -155,7 +154,7 @@
       calc((100% - 2rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
     );
     --stage-padding-top: 3rem;
-    --stage-padding-bottom: 10rem;
+    --stage-padding-bottom: 6rem;
   }
 }
 
@@ -166,10 +165,10 @@
     --carousel-depth: 280px;
     --stage-padding-x: 1.25rem;
     --stage-padding-top: 2rem;
-    --stage-padding-bottom: 8rem;
+    --stage-padding-bottom: 5rem;
     --carousel-scale: min(
       1,
-      calc((100vw - 2.5rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
+      calc((100% - 1rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
     );
   }
 }
@@ -178,14 +177,13 @@
   .skills-carousel {
     --carousel-width: 118px;
     --carousel-height: 158px;
-    /* 11 cards: need depth ~ cardWidth * count / (2π) ≈ 206px minimum */
     --carousel-depth: 240px;
     --stage-padding-x: 1rem;
     --stage-padding-top: 1.5rem;
-    --stage-padding-bottom: 7rem;
+    --stage-padding-bottom: 4.5rem;
     --carousel-scale: min(
       1,
-      calc((100vw - 2rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
+      calc((100% - 0.5rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
     );
   }
 

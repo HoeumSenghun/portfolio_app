@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import SkillsCarousel from '@/components/sections/SkillsCarousel'
+import SkillsMarquee from '@/components/sections/SkillsMarquee'
 import { createPageMetadata } from '@/lib/page-metadata'
 
 export async function generateMetadata ({ params }) {
@@ -17,6 +18,10 @@ export default async function SkillsPage ({ params }) {
       <p className="mt-3 text-muted-foreground">{t('description')}</p>
       <div className="mt-10 overflow-x-clip">
         <SkillsCarousel />
+      </div>
+
+      <div className="mt-2">
+        <SkillsMarquee />
       </div>
     </div>
   )

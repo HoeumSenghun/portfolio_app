@@ -72,7 +72,8 @@
     "skills": {
       "title": "Skills",
       "description": "Technologies I use to build and ship full stack applications.",
-      "watermark": "SKILLS"
+      "watermark": "SKILLS",
+      "marqueeLabel": "Technologies marquee"
     },
     "experiences": {
       "title": "Experiences",
