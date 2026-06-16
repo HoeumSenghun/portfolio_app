@@ -1,27 +1,47 @@
+/* 3D carousel — only styles that Tailwind cannot replace */
+.skills-carousel-wrap {
+  container-type: inline-size;
+  container-name: skills-carousel;
+}
+
 .skills-carousel {
-  --carousel-width: 200px;
-  --carousel-height: 250px;
-  --carousel-depth: 400px;
   --carousel-tilt: -16deg;
   --carousel-duration: 22s;
-  --carousel-scale: 1;
-  --stage-padding-x: 1.5rem;
-  --stage-padding-top: 2.5rem;
-  --stage-padding-bottom: 5.5rem;
-  width: 100%;
-  padding-inline: var(--stage-padding-x);
+  --carousel-width: clamp(96px, 11cqi, 190px);
+  --carousel-height: clamp(118px, 14cqi, 235px);
+  --carousel-depth: clamp(150px, 26cqi, 380px);
+  --carousel-scale: min(
+    1,
+    calc((100cqi - 1rem) / (2 * var(--carousel-depth) + var(--carousel-width) + 5rem))
+  );
+}
+
+/* Mobile: smaller cards + ring spacing so cards don't overlap */
+@container skills-carousel (max-width: 520px) {
+  .skills-carousel {
+    --carousel-width: 74px;
+    --carousel-height: 96px;
+    --carousel-depth: 142px;
+    --carousel-tilt: -14deg;
+    --carousel-scale: min(
+      1,
+      calc((100cqi - 0.5rem) / (2 * var(--carousel-depth) + var(--carousel-width) + 3rem))
+    );
+  }
+}
+
+@container skills-carousel (min-width: 521px) and (max-width: 768px) {
+  .skills-carousel {
+    --carousel-width: clamp(86px, 12cqi, 118px);
+    --carousel-height: clamp(108px, 15cqi, 148px);
+    --carousel-depth: clamp(158px, 29cqi, 205px);
+  }
 }
 
 .skills-carousel__stage {
-  position: relative;
-  width: 100%;
   min-height: calc(
-    var(--carousel-height) + var(--carousel-depth) * 0.72 + var(--stage-padding-bottom)
+    (var(--carousel-height) + var(--carousel-depth) * 0.45) * var(--carousel-scale) + 6rem
   );
-  padding-top: var(--stage-padding-top);
-  padding-bottom: var(--stage-padding-bottom);
-  overflow: visible;
-  text-align: center;
 }
 
 .skills-carousel__fit {
@@ -65,53 +85,13 @@
     translateZ(var(--carousel-depth));
 }
 
-.skills-carousel__card {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.875rem;
-  border-radius: 1rem;
-  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
-  background: color-mix(in oklab, var(--card) 92%, transparent);
-  box-shadow:
-    0 12px 32px color-mix(in oklab, var(--foreground) 8%, transparent),
-    inset 0 1px 0 color-mix(in oklab, var(--foreground) 6%, transparent);
-  backdrop-filter: blur(8px);
-  padding: 1.25rem 1rem;
-}
-
-.skills-carousel__icon {
-  display: flex;
-  height: 3.5rem;
-  width: 3.5rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  border: 2px solid color-mix(in oklab, var(--accent) 35%, transparent);
-  background: color-mix(in oklab, var(--muted) 60%, transparent);
-  color: var(--accent);
-}
-
-.skills-carousel__name {
-  max-width: 100%;
-  padding: 0 0.25rem;
-  text-align: center;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--foreground);
-}
-
 .skills-carousel__floor {
   pointer-events: none;
   position: absolute;
-  bottom: var(--stage-padding-bottom);
+  bottom: 0;
   left: 50%;
   z-index: 1;
-  width: min(900px, calc(100% - 2rem));
+  width: min(100%, 56rem);
   height: 45%;
   transform: translateX(-50%);
   background: radial-gradient(
@@ -124,13 +104,12 @@
 .skills-carousel__title {
   pointer-events: none;
   position: absolute;
-  bottom: calc(var(--stage-padding-bottom) - 1rem);
+  bottom: 0;
   left: 50%;
   z-index: 1;
-  width: calc(100% - 2rem);
-  max-width: 72rem;
+  width: calc(100% - 1rem);
   transform: translateX(-50%);
-  font-size: clamp(2.5rem, 12vw, 7rem);
+  font-size: clamp(2rem, 7cqi, 5rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -146,65 +125,37 @@
   color: transparent;
 }
 
-@media screen and (min-width: 1024px) {
+/* Fallback when container queries are not supported */
+@supports not (width: 1cqi) {
   .skills-carousel {
-    --carousel-depth: 380px;
+    --carousel-width: clamp(100px, 11vw, 185px);
+    --carousel-height: clamp(125px, 14vw, 220px);
+    --carousel-depth: clamp(160px, 24vw, 340px);
     --carousel-scale: min(
       1,
-      calc((100% - 2rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
-    );
-    --stage-padding-top: 3rem;
-    --stage-padding-bottom: 6rem;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .skills-carousel {
-    --carousel-width: 160px;
-    --carousel-height: 200px;
-    --carousel-depth: 280px;
-    --stage-padding-x: 1.25rem;
-    --stage-padding-top: 2rem;
-    --stage-padding-bottom: 5rem;
-    --carousel-scale: min(
-      1,
-      calc((100% - 1rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
+      calc((100vw - 3rem) / (2 * var(--carousel-depth) + var(--carousel-width) + 5rem))
     );
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .skills-carousel {
-    --carousel-width: 118px;
-    --carousel-height: 158px;
-    --carousel-depth: 240px;
-    --stage-padding-x: 1rem;
-    --stage-padding-top: 1.5rem;
-    --stage-padding-bottom: 4.5rem;
+    --carousel-width: 74px;
+    --carousel-height: 96px;
+    --carousel-depth: 142px;
+    --carousel-tilt: -14deg;
     --carousel-scale: min(
       1,
-      calc((100% - 0.5rem) / (2 * var(--carousel-depth) + var(--carousel-width)))
+      calc((100vw - 2.5rem) / (2 * var(--carousel-depth) + var(--carousel-width) + 3rem))
     );
   }
+}
 
-  .skills-carousel__icon {
-    height: 2.75rem;
-    width: 2.75rem;
-  }
-
-  .skills-carousel__icon svg {
-    height: 1.375rem;
-    width: 1.375rem;
-  }
-
-  .skills-carousel__card {
-    gap: 0.625rem;
-    padding: 1rem 0.625rem;
-  }
-
-  .skills-carousel__name {
-    font-size: 0.75rem;
-    line-height: 1.2;
+@media screen and (min-width: 521px) and (max-width: 768px) {
+  .skills-carousel {
+    --carousel-width: 100px;
+    --carousel-height: 128px;
+    --carousel-depth: 178px;
   }
 }
 
