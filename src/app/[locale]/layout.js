@@ -10,6 +10,7 @@ import Header from '@/components/layout/Header'
 import FloatingNav from '@/components/layout/FloatingNav'
 import { Analytics } from '@vercel/analytics/next'
 import Footer from '@/components/layout/Footer'
+import ParticleBackgroundLoader from '@/components/background/ParticleBackgroundLoader'
 import JsonLd from '@/components/JsonLd'
 import { buildMetadata } from '@/lib/seo'
 import '../globals.css'
@@ -79,8 +80,9 @@ export default async function LocaleLayout ({ children, params }) {
             <div className="flex min-h-screen flex-col">
               <Header />
               <FloatingNav />
-              <main id="main-content" className="flex-1 pt-14 md:pt-0">
-                {children}
+              <main id="main-content" className="relative flex-1 pt-14 md:pt-0">
+                <ParticleBackgroundLoader />
+                <div className="relative z-10">{children}</div>
               </main>
               <Footer />
             </div>
