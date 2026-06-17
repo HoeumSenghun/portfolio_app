@@ -51,7 +51,7 @@ function ParticleCanvas () {
 
   return (
     <div
-      className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      className="pointer-events-none fixed inset-x-0 bottom-0 top-14 z-0 overflow-hidden md:top-16"
       aria-hidden
     >
       <Particles
