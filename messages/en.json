@@ -59,6 +59,11 @@
     "kh": "ខ្មែរ",
     "switch": "Switch language to"
   },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or may have been moved.",
+    "home": "Back to home"
+  },
   "pages": {
     "about": {
       "title": "About Me",

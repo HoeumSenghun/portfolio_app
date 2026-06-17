@@ -77,12 +77,12 @@ export default async function LocaleLayout ({ children, params }) {
       <body className="min-h-screen antialiased">
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
-            <div className="flex min-h-screen flex-col">
+            <ParticleBackgroundLoader />
+            <div className="relative z-10 flex min-h-screen flex-col">
               <Header />
               <FloatingNav />
-              <main id="main-content" className="relative flex-1 pt-14 md:pt-0">
-                <ParticleBackgroundLoader />
-                <div className="relative z-10">{children}</div>
+              <main id="main-content" className="flex-1 pt-14 md:pt-0">
+                {children}
               </main>
               <Footer />
             </div>
