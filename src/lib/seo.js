@@ -27,7 +27,7 @@ const keywords = {
 export function buildMetadata ({ locale, title, description, path = '' }) {
   const canonicalPath = `/${locale}${path}`
   const canonical = `${siteUrl}${canonicalPath}`
-  const ogImage = `${siteUrl}/icon-global.svg`
+  const ogImage = `${siteUrl}/icon-sh.svg`
   const googleVerification =
     process.env.GOOGLE_SITE_VERIFICATION ?? null
 
@@ -85,8 +85,9 @@ export function buildMetadata ({ locale, title, description, path = '' }) {
       images: [ogImage],
     },
     icons: {
-      icon: [{ url: '/icon-global.svg', type: 'image/svg+xml' }],
-      shortcut: '/icon-global.svg',
+      icon: [{ url: '/icon-sh.svg', type: 'image/svg+xml' }],
+      shortcut: '/icon-sh.svg',
+      apple: '/icon-sh.svg',
     },
   }
 }
